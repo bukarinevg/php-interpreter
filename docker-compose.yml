@@ -1,0 +1,9 @@
+services:
+  php-cli:
+    build: ./php
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./php:/cli/app/
+      - ./command:/cli/app/command
+      - ./execute.sh:/cli/app/execute.sh

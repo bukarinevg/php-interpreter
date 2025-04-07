@@ -1,0 +1,16 @@
+{
+    "name": "evgbuk/php-interpreter",
+    "description": "php-interpreter",
+    "autoload": {
+        "psr-4": {
+            "app\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Evgenii Bukarin",
+            "email": "bukarinevgeni@gmail.com"
+        }
+    ],
+    "require": {}
+}
