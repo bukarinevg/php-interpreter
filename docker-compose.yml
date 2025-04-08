@@ -5,5 +5,4 @@ services:
       - "9000:9000"
     volumes:
       - ./php:/cli/app/
-      - ./command:/cli/app/command
-      - ./execute.sh:/cli/app/execute.sh
+      - ./command:/cli/app/

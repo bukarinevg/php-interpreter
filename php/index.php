@@ -3,13 +3,12 @@ declare(strict_types=1);
 
 require_once 'vendor/autoload.php';
 
-use App\Interpretator;
+use app\Interpretator;
 
+array_shift($argv);
+$command = file_get_contents("./command");
 
-print_r([
-    'params' => $params,
-    'argv' => $argv,
-]);
+$interpretator = new Interpretator($argv, $command);
+$interpretator->interpret();
 
-$interpretator = new Interpretator();
 

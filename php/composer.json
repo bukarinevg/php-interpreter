@@ -3,7 +3,7 @@
     "description": "php-interpreter",
     "autoload": {
         "psr-4": {
-            "app\\": "src/"
+            "app\\": "app/"
         }
     },
     "authors": [
