@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace app\functions;
+namespace src\functions;
 
 class JsonFunction
 {
@@ -10,8 +10,8 @@ class JsonFunction
     {
         $keyValueArray = $arguments[0];
         
-        return json_encode([
+        return json_encode(
             $keyValueArray
-        ]);            
+        );            
     }
 }

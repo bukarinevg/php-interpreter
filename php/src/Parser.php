@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace app;
+namespace src;
 
-use app\nodes\ASTNode;
-use app\nodes\ConstNode;
-use app\nodes\FunctionNode;
+use src\nodes\ASTNode;
+use src\nodes\ConstNode;
+use src\nodes\FunctionNode;
 
 class Parser 
 {

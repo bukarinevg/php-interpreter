@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 require_once 'vendor/autoload.php';
 
-use app\Interpretator;
+use src\Interpretator;
 
 array_shift($argv);
 

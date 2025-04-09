@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace app\nodes;
+namespace src\nodes;
 
 class FunctionNode extends ASTNode
 {
@@ -10,7 +10,6 @@ class FunctionNode extends ASTNode
         private(set) string $name,
         private(set) array $args = [],
     ) {
-
     }
         
 }

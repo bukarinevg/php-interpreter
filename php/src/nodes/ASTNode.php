@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace app\nodes;
+namespace src\nodes;
 
 abstract class ASTNode
 {

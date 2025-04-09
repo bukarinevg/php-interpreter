@@ -1,13 +1,13 @@
 <?php
 declare(strict_types=1);
 
-namespace app;
+namespace src;
 
 use Exception;
-use app\nodes\ASTNode;
-use app\nodes\ConstNode;
-use app\nodes\FunctionNode;
-use app\enums\Functions;
+use src\nodes\ASTNode;
+use src\nodes\ConstNode;
+use src\nodes\FunctionNode;
+use src\enums\Functions;
 
 class Evaluator
 {

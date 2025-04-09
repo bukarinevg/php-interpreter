@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace app\functions;
+namespace src\functions;
 
 class ConcatFunction 
 {

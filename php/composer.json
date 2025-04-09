@@ -3,7 +3,7 @@
     "description": "php-interpreter",
     "autoload": {
         "psr-4": {
-            "app\\": "app/"
+            "src\\": "src/"
         }
     },
     "authors": [
@@ -12,5 +12,7 @@
             "email": "bukarinevgeni@gmail.com"
         }
     ],
-    "require": {}
+    "require-dev": {
+        "phpunit/phpunit": "^12.1"
+    }
 }

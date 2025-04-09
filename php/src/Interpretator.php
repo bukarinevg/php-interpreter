@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace app;
+namespace src;
 
 class Interpretator
 {
@@ -20,7 +20,9 @@ class Interpretator
         $result = $evaluator->evaluate($ast);
 
         echo PHP_EOL;
-        print_R($result);
+        print_R([
+            'result' => $result,
+        ]);
         echo PHP_EOL. PHP_EOL;
         
         return $result;
