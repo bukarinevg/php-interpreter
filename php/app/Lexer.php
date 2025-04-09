@@ -34,7 +34,7 @@ class Lexer{
                 ctype_digit($char) => $tokens[] = new Token('NUMBER', $this->readNumber()),
                 ctype_alpha($char) => $tokens[] = new Token('IDENTIFIER', $this->readIdentifier()),
 
-                default => throw new Exception("Wrong Symb '{$char}' position {$this->pointer}"),
+                default => throw new Exception("Invalid symbol '{$char}' index: {$this->pointer}"),
             };
 
             if ( in_array($char, ['(', ')', ',']) ) {
@@ -56,17 +56,17 @@ class Lexer{
     
     private function readString(): string {
         $result = '';
-        $result .= $this->getCurrentSymbAndMove(); 
+        $this->pointer++; 
         
         while ($this->pointer < $this->length && $this->getCurrentSymb() !== '"') {
             $result .= $this->getCurrentSymbAndMove();
         }
         
         if ($this->pointer >= $this->length) {
-            throw new Exception("Не закрыта строка");
+            throw new Exception("Invalid command index = {$this->pointer}");
         }
         
-        $result .= $this->getCurrentSymbAndMove();
+        $this->pointer++;
         
         return $result;
     }

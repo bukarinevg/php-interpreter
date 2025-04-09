@@ -6,8 +6,13 @@ namespace app\functions;
 
 class ConcatFunction 
 {
-    public function execute(string $first, string $second): string
+    public function execute(array $valuesAray): string
     {
-        return $first . $second;
+        $result = '';
+        foreach ($valuesAray as $value) {
+            $result .= $value;
+        }
+        
+        return $result;
     }
 }

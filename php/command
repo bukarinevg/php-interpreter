@@ -1,5 +1,5 @@
-json(
-  map(
+
+  json(map(
     array("message"),
     array(
       concat(
@@ -7,6 +7,6 @@ json(
         getArg(0)
       )
     )
-  )
-)
+  ))
+
 

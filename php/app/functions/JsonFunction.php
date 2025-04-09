@@ -4,17 +4,14 @@ declare(strict_types=1);
 
 namespace app\functions;
 
-
 class JsonFunction
 {
-    public function execute(array $keyValueArray ) : string | false
+    public function execute(array $arguments ) : string | false
     {
-        if (count($keyValueArray) !== 2) {
-            throw new \InvalidArgumentException("Json function requires exactly 2 arguments.");
-        }
-
+        $keyValueArray = $arguments[0];
+        
         return json_encode([
-            $keyValueArray[0] => $keyValueArray[1]
+            $keyValueArray
         ]);            
     }
 }

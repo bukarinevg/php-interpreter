@@ -4,15 +4,23 @@ declare(strict_types=1);
 
 namespace app\functions;
 
-
 use Exception;
 
 class GetArgFunction 
 {
-    public function execute(int $index, array $arguments): string | int
+    public function execute(array $arguments): string | int
     {
-        $argument =  $arguments[$index] ?? throw new Exception("Error Argument Index", 1);
+        if (count($arguments) !== 1) {
+            throw new Exception("Invadlid call of GetArg function.");
+        }
 
-        return ctype_digit((string)$argument) ? (int)$argument : (string)$argument;
+        $index = $arguments[0];
+        $argv = $GLOBALS['COMMAND_ARGUMENTS'];
+
+        if (!is_numeric($index) || $index < 0 || $index + 1 > count($argv)) {
+            throw new Exception("Invalid argument index for function getArg = $index.");
+        }
+
+        return $argv[$index] ?? null;
     }
 }

@@ -4,19 +4,23 @@ declare(strict_types=1);
 
 namespace app\functions;
 
-
 class MapFunction
 {
-    public function execute(array $keys, array $values)
+    public function execute(array $arguments)
     {
+        $keys = $arguments[0];
+        $values = $arguments[1];
+
         if (count($keys) !== count($values)) {
             throw new \InvalidArgumentException("Map function requires equal number of keys and values.");
         }
 
-        $result = [];
-
-        foreach ($keys as $index => $key) {
-            $result[$key] = $values[$index];
+        for ($i = 0; $i < count($keys); $i++) {
+            if (!is_string($keys[$i])) {
+                throw new \InvalidArgumentException("Keys must be strings.");
+            }
+            
+            $result[$keys[$i]] = $values[$i];
         }
 
         return $result;

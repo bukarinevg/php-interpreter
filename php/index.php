@@ -6,9 +6,14 @@ require_once 'vendor/autoload.php';
 use app\Interpretator;
 
 array_shift($argv);
+
 $command = file_get_contents("./command");
 
-$interpretator = new Interpretator($argv, $command);
-$interpretator->interpret();
+$interpretator = new Interpretator( $command, $argv);
 
-
+try {
+    $interpretator->interpret();
+}
+catch (Exception $e) {
+    echo "Error: " . $e->getMessage() . "\n";
+}
